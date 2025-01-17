@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Random Fun Facts</title>
+<style>
+  body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+
+  #fact-container {
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+  }
+
+  button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+  <div id="fact-container">
+    <p id="fact"></p>
+  </div>
+
+  <button onclick="newFact()">Generate Another Fun Fact</button>
+
+  <script>
+    const facts = [
+      "It is impossible for most people to lick their own elbow.",
+      "A crocodile cannot stick its tongue out.",
+      "A shrimp's heart is in its head.",
+      "The \"sixth sick sheik's sixth sheep's sick\" is believed to be the toughest tongue twister in the English language.",
+      "Wearing headphones for just an hour will increase the bacteria in your ear by 700 times.",
+      "The average person laughs 10 times a day.",
+      "It is physically impossible for pigs to look up into the sky.",
+      "The human nose can recognize and remember up to 50,000 different scents."
+    ];
+
+    const factElement = document.getElementById("fact");
+
+    function newFact() {
+      const randomIndex = Math.floor(Math.random() * facts.length);
+      factElement.textContent = facts[randomIndex];
+    }
+
+    // Display a fact on page load
+    newFact();
+  </script>
+
+</body>
+</html>
